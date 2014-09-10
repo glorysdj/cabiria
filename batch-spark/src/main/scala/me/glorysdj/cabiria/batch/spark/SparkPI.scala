@@ -15,6 +15,8 @@ import me.glorysdj.cabiria.batch.spark.Conventions._
 object SparkPI {
 
   //calculate pi with leibniz
+  //spark-submit --class me.glorysdj.cabiria.batch.spark.SparkPI --deploy-mode client --master spark://ford-267163.phx-os1.stratus.dev.ebay.com:7077 /root/cabiria/batch-spark_2.10-0.1.jar
+  //spark-submit --class me.glorysdj.cabiria.batch.spark.SparkPI --deploy-mode cluster --master yarn /root/cabiria/batch-spark_2.10-0.1.jar
   def main(args: Array[String]) {
     if (args.length < 1) {
       System.err.println("Usage: SparkPI <n>")
