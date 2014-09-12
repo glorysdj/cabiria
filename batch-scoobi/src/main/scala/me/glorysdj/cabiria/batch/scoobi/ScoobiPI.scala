@@ -14,7 +14,7 @@ object ScoobiPI extends ScoobiApp {
   //hadoop jar /root/cabiria/batch-scoobi-0.0.1-SNAPSHOT-job.jar me.glorysdj.cabiria.batch.scoobi.ScoobiPI hdfs://ford-267163.phx-os1.stratus.dev.ebay.com:8020/user/root/input/pi
   def run() {
     if (args.length != 1) {
-      System.err.println("Usage: SparkPI <in>")
+      System.err.println("Usage: ScoobiPI <in>")
       System.exit(1)
     }
     val in = args(0)
