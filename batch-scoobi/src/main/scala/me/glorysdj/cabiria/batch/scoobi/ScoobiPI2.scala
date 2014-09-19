@@ -21,7 +21,7 @@ object ScoobiPI2 extends ScoobiApp {
     val n = args(0).toInt
 
     val begin = System.currentTimeMillis()
-    val m = 10000000
+    val m = 1000000
     val slices = List.range(0, n / m)
     val numed = slices.map(i => {
       val l = List.range(1, m + 1).map(j => {
