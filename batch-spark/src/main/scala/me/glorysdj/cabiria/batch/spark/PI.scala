@@ -10,19 +10,19 @@ import org.apache.spark.SparkContext
  * @author dongjie.shi
  *
  */
-object SparkPI {
+object PI {
 
   //calculate pi with leibniz
-  //spark-submit --class me.glorysdj.cabiria.batch.spark.SparkPI --deploy-mode client --master spark://ford-267163.phx-os1.stratus.dev.ebay.com:7077 /root/cabiria/batch-spark_2.10-0.1.jar
-  //spark-submit --class me.glorysdj.cabiria.batch.spark.SparkPI --deploy-mode cluster --master yarn /root/cabiria/batch-spark_2.10-0.1.jar
+  //spark-submit --class me.glorysdj.cabiria.batch.spark.PI --deploy-mode client --master spark://ford-267163.phx-os1.stratus.dev.ebay.com:7077 /root/cabiria/batch-spark_2.10-0.1.jar hdfs://ford-267163.phx-os1.stratus.dev.ebay.com:8020/user/root/input/pi
+  //spark-submit --class me.glorysdj.cabiria.batch.spark.PI --deploy-mode cluster --master yarn /root/cabiria/batch-spark_2.10-0.1.jar
   def main(args: Array[String]) {
      if (args.length != 1) {
-      System.err.println("Usage: SparkPI <in>")
+      System.err.println("Usage: PI <in>")
       System.exit(1)
     }
     val in = args(0)
     
-    val conf = new SparkConf().setAppName("SparkPI").set("spark.executor.memory", "3g")
+    val conf = new SparkConf().setAppName("PI").set("spark.executor.memory", "3g")
     val spark = new SparkContext(conf)
     
     val numed = spark.textFile(in).map(_.toInt)
