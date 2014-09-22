@@ -1,0 +1,7 @@
+DROP TABLE numbers;
+CREATE TABLE numbers (number DOUBLE);
+LOAD DATA LOCAL INPATH '/root/cabiria/hdfs/pi' OVERWRITE INTO TABLE numbers;
+//CREATE EXTERNAL TABLE numbers(number DOUBLE COMMENT 'number ofrom 1 to n') COMMENT 'This is the numbers table' STORED AS TEXTFILE LOCATION '/user/root/input/pi';
+SELECT n.number FROM numbers n WHERE n.number<=100;
+SELECT COUNT(*) FROM numbers;
+SELECT 4*SUM(pow(-1,n.number)*(1/(n.number*2-1))) FROM numbers n;
